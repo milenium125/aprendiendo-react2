@@ -1,0 +1,23 @@
+browser --> server: HTTP POST https://studies.cs.helsinki.fi/exampleapp/new_note
+nota:
+en server devuelve un codigo 302 de redireccionamiento
+y redirecciona al archivo notes.
+fin nota
+browser --> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/notes
+server --> browser: Devuelve codigo HTML
+
+nota:
+desde el codigo se hace la llamada al archivo main.css y main.js.
+fin nota
+browser --> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.css
+server --> browser: devuelve el archivo main.css
+browser --> server: HTTP GET https://studies.cs.helsinki.fi/exampleapp/main.js
+server --> browser: devuelve el archivo main.js
+
+nota:
+se ejecuta el codigo javascript y se manda a llamar el archivo
+JSON 
+fin nota
+
+browser --> https://studies.cs.helsinki.fi/exampleapp/data.json
+server --> devuelve archivo data.json
